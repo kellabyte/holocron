@@ -5,6 +5,8 @@ Holocron is an object storage based leader election library.
 
 Since Holocron stores everything in object storage that can be geo-replicated a node truly becomes virtual. In the future replacing a node does not require bootstrapping a new node. Simply pointing the new compute at the crashed nodes S3 `bucket+prefix` will allow it to resume immediately.
 
+Holocron is inspired by a [blog post by Gunnar Morling](https://www.morling.dev/blog/leader-election-with-s3-conditional-writes/) discussing how distributed locks and leader elections are now possible in Amazon AWS S3 using conditional writes and the [ If-None-Match header](https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html#conditional-writes) support recently added to S3.
+
 # Compiling
 ```
 make
