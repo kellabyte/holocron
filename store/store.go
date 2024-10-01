@@ -106,7 +106,7 @@ func (store *Store) PutEpoch(epoch int, nodeId uuid.UUID) error {
 
 	err := req.Send()
 	if err != nil {
-		fmt.Println("Error putting file")
+		// fmt.Println("Error putting file")
 		return err
 	}
 

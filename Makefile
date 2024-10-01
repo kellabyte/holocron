@@ -1,4 +1,4 @@
-SIMULATOR_BINARY_NAME=node
+SIMULATOR_BINARY_NAME=simulator
 
 build-simulator:
 	GOARCH=amd64 GOOS=darwin go build -o build/${SIMULATOR_BINARY_NAME}-amd64-darwin cmd/simulator/main.go

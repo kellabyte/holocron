@@ -5,6 +5,38 @@ Holocron is an object storage based leader election library.
 
 Since Holocron stores everything in object storage that can be geo-replicated a node truly becomes virtual. In the future replacing a node does not require bootstrapping a new node. Simply pointing the new compute at the crashed nodes S3 `bucket+prefix` will allow it to resume immediately.
 
+# Example
+```
+./build/simulator-arm64-darwin \
+    -key=<REDACTED> \
+    -secret=<REDACTED> \ 
+    -region=<REDACTED> \
+    -bucket=<REDACTED> \
+    -prefix=leader
+```
+```
+1:33PM INF node/node.go:70 > Starting node epoch=0 node=3f10d2708fce role=solo
+
+1:33PM INF node/node.go:70 > Starting node epoch=0 node=d499b66c65f4 role=solo
+
+1:33PM INF node/node.go:111 > Trying to acquire cluster leadership. epoch=0 node=3f10d2708fce role=solo
+
+1:33PM INF node/node.go:111 > Trying to acquire cluster leadership. epoch=0 node=d499b66c65f4 role=solo
+Blocking, press ctrl+c to continue...
+
+1:33PM INF node/node.go:98 > Acquired cluster leadership. epoch=49 node=d499b66c65f4 role=leader
+
+1:33PM INF node/node.go:89 > Failed to acquire cluster leadership, becoming a follower. epoch=49 node=3f10d2708fce role=follower
+
+1:33PM INF node/node.go:111 > Trying to acquire cluster leadership. epoch=49 node=d499b66c65f4 role=leader
+
+1:33PM INF node/node.go:111 > Trying to acquire cluster leadership. epoch=49 node=3f10d2708fce role=follower
+
+1:33PM INF node/node.go:98 > Acquired cluster leadership. epoch=50 node=d499b66c65f4 role=leader
+
+1:33PM INF node/node.go:89 > Failed to acquire cluster leadership, becoming a follower. epoch=50 node=3f10d2708fce role=follower
+```
+
 #### Ideas
 - Implement virtual nodes with the ability to instantly resume from crashed nodes state.
 - Each node can share an S3 `bucket+prefix` or each node can have it's own bucket or ACL's.
