@@ -65,4 +65,4 @@ Blocking, press ctrl+c to continue...
 Holocron is highly experimental and only an hour-ish of hacking. Basically all it does at the moment is compete on an epoch lock file. It doesn't implement lock expiration or anything that makes it a complete implementation yet.
 
 # Contributing
-If you're interested in helping out feel free! I'm curious where this will go.
+If you're interested in helping out feel free! I'm curious where we can take this!
