@@ -14,6 +14,8 @@ make
 **_WARNING: THIS WILL CAUSE WRITES IN YOUR S3 BUCKET_**
 
 Holocron doesn't build node binaries yet but at the moment a 2 node simulator is provided.
+
+Here is an example of a Holocron cluster being restarted picking up where it left off on `epoch round 49`.
 ```
 ./build/simulator-arm64-darwin \
     -key=<REDACTED> \
