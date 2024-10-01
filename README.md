@@ -5,7 +5,15 @@ Holocron is an object storage based leader election library.
 
 Since Holocron stores everything in object storage that can be geo-replicated a node truly becomes virtual. In the future replacing a node does not require bootstrapping a new node. Simply pointing the new compute at the crashed nodes S3 `bucket+prefix` will allow it to resume immediately.
 
-# Example
+# Compiling
+```
+make
+```
+
+# Running the simulator
+**_WARNING: THIS WILL CAUSE WRITES IN YOUR S3 BUCKET_**
+
+Holocron doesn't build node binaries yet but at the moment a 2 node simulator is provided.
 ```
 ./build/simulator-arm64-darwin \
     -key=<REDACTED> \
